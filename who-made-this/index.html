@@ -4,12 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Who Made This — Miscellaneous Digital</title>
-<meta name="description" content="Who Made This, catalog no. 001 from Miscellaneous Digital. A small app that answers a simple question about the things around you.">
+<meta name="description" content="Who Made This: point your camera at a brand and see who really owns it. Catalog no. 001 from Miscellaneous Digital.">
 <meta property="og:title" content="Who Made This">
-<meta property="og:description" content="Catalog no. 001 from Miscellaneous Digital.">
+<meta property="og:description" content="Point your camera at a brand and see who really owns it.">
 <meta property="og:url" content="https://miscellaneous.digital/who-made-this">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232b47d9'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='34' font-weight='800' fill='%23f7f5ee' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="64x64" href="/who-made-this/icon-64.png">
+<link rel="apple-touch-icon" href="/who-made-this/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
@@ -129,6 +130,60 @@
     max-width: 40ch;
     text-wrap: balance;
     color: var(--ink-soft);
+  }
+
+  /* ---------- Screenshots ---------- */
+
+  .shots-section {
+    padding: 0 clamp(1.25rem, 5vw, 4rem) clamp(2.5rem, 6vw, 4.5rem);
+    max-width: 74rem;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .shots {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1.25rem, 3.5vw, 2.5rem);
+    max-width: 58rem;
+  }
+
+  .shots figure { margin: 0; }
+  .shots figure:nth-child(1) { transform: rotate(-1.1deg); }
+  .shots figure:nth-child(2) { transform: rotate(0.9deg) translateY(0.6rem); }
+  .shots figure:nth-child(3) { transform: rotate(-0.5deg); }
+
+  .shots img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1.5px solid var(--ink);
+    border-radius: 14px;
+    box-shadow: 4px 5px 0 var(--cobalt-ghost);
+  }
+
+  .shots figcaption {
+    margin-block-start: 0.7rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    font-variation-settings: "wdth" 88;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    .shots {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-block-end: 0.75rem;
+      margin-inline: -1.25rem;
+      padding-inline: 1.25rem;
+    }
+    .shots figure { flex: 0 0 64vw; scroll-snap-align: center; }
+    .shots figure:nth-child(2) { transform: rotate(0.9deg); }
   }
 
   /* ---------- The card ---------- */
@@ -287,8 +342,25 @@
   <span class="stamp-big reveal r1">Shipped</span>
   <p class="kicker reveal r1">001</p>
   <h1 class="reveal r2 logo"><img src="/who-made-this/logo.svg" alt="Who Made This?" width="527" height="487"></h1>
-  <p class="lede reveal r3">A small app that answers a simple question about the things around you.</p>
+  <p class="lede reveal r3">Point your camera at a brand and see who really owns it.</p>
 </header>
+
+<section class="shots-section reveal r4" aria-label="Screenshots of the app">
+  <div class="shots">
+    <figure>
+      <img src="/who-made-this/screen-1.jpg" alt="The app pointed at two deodorant sticks: point your camera at a brand" loading="lazy" width="740" height="1600">
+      <figcaption>Point it at a shelf</figcaption>
+    </figure>
+    <figure>
+      <img src="/who-made-this/screen-2.jpg" alt="Two brands spotted and labeled Conglomerate: see who makes it" loading="lazy" width="740" height="1600">
+      <figcaption>It spots the brands</figcaption>
+    </figure>
+    <figure>
+      <img src="/who-made-this/screen-3.jpg" alt="Detail card: Dove, owned by Unilever plc, with good-to-know notes" loading="lazy" width="740" height="1600">
+      <figcaption>Tap for the full story</figcaption>
+    </figure>
+  </div>
+</section>
 
 <section class="card-section reveal r4">
   <div class="index-card">
@@ -304,7 +376,7 @@
       <dd>Who Made This</dd>
 
       <dt>What it does</dt>
-      <dd>Point it at something and it tells you who made it. One question, one answer, no clutter.</dd>
+      <dd>Spots the brands in front of your camera and shows the company behind each one: the owner, the owner's owner, and what's good to know about them. Cute brands are often owned by not-so-cute conglomerates.</dd>
 
       <dt>Status</dt>
       <dd>Shipped, and quietly improving.</dd>
