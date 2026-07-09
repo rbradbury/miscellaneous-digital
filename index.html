@@ -188,6 +188,14 @@
     transition: color 0.35s var(--ease-out);
   }
 
+  .entry-logo {
+    display: block;
+    width: clamp(150px, 20vw, 210px);
+    height: auto;
+    transition: transform 0.35s var(--ease-out);
+  }
+  a.entry:hover .entry-logo { transform: rotate(-1.5deg) scale(1.02); }
+
   .entry-desc {
     margin-block-start: 0.6em;
     font-size: clamp(1rem, 1.5vw, 1.15rem);
@@ -308,7 +316,7 @@
   <a class="entry reveal r4" href="/who-made-this/" aria-label="Who Made This">
     <span class="entry-num">001</span>
     <span>
-      <span class="entry-name">Who Made This</span>
+      <img class="entry-logo" src="/who-made-this/logo.svg" alt="Who Made This?" width="527" height="487">
       <span class="entry-desc" style="display:block">Point your camera at a brand and see who really owns it: the owner, the owner's owner, and what's good to know about them.</span>
     </span>
     <span class="entry-meta">
