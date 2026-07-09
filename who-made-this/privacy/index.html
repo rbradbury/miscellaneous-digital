@@ -246,7 +246,7 @@
 
   <div class="contact-card">
     <span class="who">Miscellaneous Digital</span>
-    <span>Questions or requests: <a href="#contact" data-u="hello" data-d="miscellaneous.digital">hello at miscellaneous.digital</a></span>
+    <span>Questions or requests: <strong>hello at miscellaneous.digital</strong></span>
   </div>
 </main>
 
@@ -254,12 +254,6 @@
   <span>&copy; 2026 Miscellaneous Digital</span>
   <span><a href="/who-made-this/">Who Made This</a> &middot; <a href="/">The catalog</a></span>
 </footer>
-
-<script>
-  document.querySelectorAll('a[data-u]').forEach(function (a) {
-    a.href = 'mailto:' + a.dataset.u + '@' + a.dataset.d;
-  });
-</script>
 
 </body>
 </html>
