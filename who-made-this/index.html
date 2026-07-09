@@ -132,6 +132,19 @@
     color: var(--ink-soft);
   }
 
+  .hero p.support {
+    margin-block-start: clamp(0.9rem, 2vw, 1.4rem);
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    font-variation-settings: "wdth" 92;
+  }
+  .hero p.support a {
+    color: var(--cobalt-deep);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .hero p.support a:hover { color: var(--cobalt); }
+
   /* ---------- Screenshots ---------- */
 
   .shots-section {
@@ -343,6 +356,7 @@
   <p class="kicker reveal r1">001</p>
   <h1 class="reveal r2 logo"><img src="/who-made-this/logo.svg" alt="Who Made This?" width="527" height="487"></h1>
   <p class="lede reveal r3">Point your camera at a brand and see who really owns it.</p>
+  <p class="support reveal r3">For support or any questions, get in touch: <a href="mailto:hello@miscellaneous.digital">hello@miscellaneous.digital</a></p>
 </header>
 
 <section class="shots-section reveal r4" aria-label="Screenshots of the app">
