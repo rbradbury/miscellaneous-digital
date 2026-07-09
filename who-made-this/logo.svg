@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 480" role="img" aria-label="Who Made This?">
+  <!-- cyan highlight behind "Who" -->
+  <rect x="40" y="96" width="378" height="80" rx="40" fill="#3ff3ec" transform="rotate(-2 229 136)"/>
+  <!-- wordmark -->
+  <g fill="#0c0c0d" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" font-size="112">
+    <text x="82" y="170">Who</text>
+    <text x="82" y="294">Made</text>
+    <text x="82" y="418">This?</text>
+  </g>
+  <!-- viewfinder brackets -->
+  <g fill="none" stroke="#0c0c0d" stroke-width="26" stroke-linecap="round">
+    <path d="M18 138 V64 Q18 18 64 18 H138"/>
+    <path d="M392 18 H466 Q512 18 512 64 V138"/>
+    <path d="M18 342 V416 Q18 462 64 462 H138"/>
+    <path d="M392 462 H466 Q512 462 512 416 V342"/>
+  </g>
+</svg>

@@ -99,8 +99,10 @@
     max-width: 11ch;
   }
 
-  .hero h1 .q {
-    color: var(--cobalt);
+  .hero h1.logo img {
+    display: block;
+    width: clamp(230px, 38vw, 400px);
+    height: auto;
   }
 
   .hero .stamp-big {
@@ -284,7 +286,7 @@
 <header class="hero">
   <span class="stamp-big reveal r1">Shipped</span>
   <p class="kicker reveal r1">001</p>
-  <h1 class="reveal r2">Who Made This<span class="q">?</span></h1>
+  <h1 class="reveal r2 logo"><img src="/who-made-this/logo.svg" alt="Who Made This?" width="530" height="480"></h1>
   <p class="lede reveal r3">A small app that answers a simple question about the things around you.</p>
 </header>
 
