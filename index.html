@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miscellaneous Digital</title>
+<meta name="description" content="Miscellaneous Digital is a holding company for a drawer of small, useful apps. First out of the drawer: Who Made This.">
+<meta property="og:title" content="Miscellaneous Digital">
+<meta property="og:description" content="A drawer of small, useful apps.">
+<meta property="og:url" content="https://miscellaneous.digital">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232b47d9'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='34' font-weight='800' fill='%23f7f5ee' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: oklch(0.965 0.009 95);
+    --paper-deep: oklch(0.93 0.012 95);
+    --ink: oklch(0.24 0.015 265);
+    --ink-soft: oklch(0.45 0.02 265);
+    --cobalt: oklch(0.47 0.19 264);
+    --cobalt-deep: oklch(0.38 0.16 264);
+    --cobalt-ghost: oklch(0.47 0.19 264 / 0.14);
+    --stamp: oklch(0.58 0.19 30);
+    --rule: oklch(0.24 0.015 265 / 0.18);
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Archivo", system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--cobalt); color: var(--paper); }
+
+  a { color: inherit; }
+
+  /* ---------- Masthead ---------- */
+
+  .masthead {
+    background: var(--cobalt);
+    color: var(--paper);
+    padding: clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 5vw, 4rem) clamp(2.5rem, 7vw, 5.5rem);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .masthead ::selection { background: var(--paper); color: var(--cobalt); }
+
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-variation-settings: "wdth" 90;
+    letter-spacing: 0.02em;
+    margin-block-end: clamp(3rem, 9vw, 7rem);
+  }
+
+  .masthead-top .est { opacity: 0.7; }
+
+  .masthead h1 {
+    font-size: clamp(1.5rem, 8.2vw, 6.8rem);
+    line-height: 0.95;
+    font-weight: 800;
+    font-variation-settings: "wdth" 122;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+  }
+
+  .masthead h1 .amp {
+    display: block;
+    font-variation-settings: "wdth" 72;
+    font-weight: 300;
+    font-style: italic;
+    text-transform: none;
+    font-size: 0.38em;
+    letter-spacing: 0.01em;
+    margin-block: 0.35em 0.15em;
+    opacity: 0.85;
+  }
+
+  .masthead p.lede {
+    margin-block-start: clamp(1.5rem, 4vw, 3rem);
+    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+    font-weight: 400;
+    max-width: 44ch;
+    text-wrap: balance;
+    opacity: 0.94;
+  }
+
+  /* scattered drawer objects */
+  .doodles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .doodles svg {
+    position: absolute;
+    stroke: var(--paper);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.35;
+  }
+  .doodle-clip   { width: clamp(60px, 8vw, 110px); top: 12%; right: 8%; transform: rotate(24deg); }
+  .doodle-pin    { width: clamp(40px, 5vw, 70px);  bottom: 14%; right: 22%; transform: rotate(-12deg); }
+  .doodle-string { width: clamp(90px, 13vw, 190px); bottom: 6%; right: 4%; transform: rotate(6deg); }
+  @media (max-width: 640px) {
+    .doodle-string { display: none; }
+    .doodle-clip { right: 4%; }
+  }
+
+  /* ---------- Index ---------- */
+
+  main {
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem);
+    max-width: 74rem;
+    margin-inline: auto;
+  }
+
+  .index-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    border-block-end: 2px solid var(--ink);
+    padding-block-end: 0.75rem;
+    margin-block-end: 0;
+  }
+
+  .index-heading h2 {
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+    font-weight: 800;
+    font-variation-settings: "wdth" 115;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+
+  .index-heading .count {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    font-variation-settings: "wdth" 90;
+  }
+
+  .entry {
+    display: grid;
+    grid-template-columns: minmax(3.5rem, 6rem) 1fr auto;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    align-items: start;
+    padding-block: clamp(1.75rem, 4vw, 3rem);
+    border-block-end: 1px solid var(--rule);
+    text-decoration: none;
+    transition: background 0.35s var(--ease-out);
+  }
+
+  a.entry:hover { background: var(--cobalt-ghost); }
+  a.entry:hover .entry-name { color: var(--cobalt-deep); }
+  a.entry:hover .entry-go { transform: translateX(0.35rem); }
+
+  .entry-num {
+    font-size: clamp(1rem, 1.8vw, 1.3rem);
+    font-weight: 300;
+    font-variation-settings: "wdth" 75;
+    color: var(--cobalt);
+    padding-block-start: 0.45em;
+    font-feature-settings: "tnum";
+  }
+
+  .entry-name {
+    font-size: clamp(1.9rem, 4.5vw, 3.4rem);
+    font-weight: 800;
+    font-variation-settings: "wdth" 110;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    transition: color 0.35s var(--ease-out);
+  }
+
+  .entry-desc {
+    margin-block-start: 0.6em;
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    color: var(--ink-soft);
+    max-width: 52ch;
+  }
+
+  .entry-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+    padding-block-start: 0.5em;
+  }
+
+  .stamp {
+    font-size: 0.72rem;
+    font-weight: 700;
+    font-variation-settings: "wdth" 95;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--stamp);
+    border: 2px solid currentColor;
+    border-radius: 3px;
+    padding: 0.3em 0.7em;
+    transform: rotate(-3deg);
+  }
+
+  .stamp.pending {
+    color: var(--ink-soft);
+    border-style: dashed;
+    transform: rotate(2deg);
+  }
+
+  .entry-go {
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--cobalt);
+    transition: transform 0.35s var(--ease-out);
+  }
+
+  .entry.pending-entry { opacity: 0.55; }
+  .entry.pending-entry .entry-name { font-weight: 300; font-variation-settings: "wdth" 90; }
+
+  @media (max-width: 640px) {
+    .entry { grid-template-columns: 3rem 1fr; }
+    .entry-meta { grid-column: 2; flex-direction: row; align-items: center; padding-block-start: 0; }
+    .entry-go { order: -1; }
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 5vw, 4rem) clamp(2.5rem, 5vw, 4rem);
+    max-width: 74rem;
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-variation-settings: "wdth" 90;
+  }
+
+  footer a {
+    color: var(--cobalt-deep);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  footer a:hover { color: var(--cobalt); }
+
+  /* ---------- Entrance motion ---------- */
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      opacity: 0;
+      translate: 0 1.2rem;
+      animation: rise 0.9s var(--ease-out) forwards;
+    }
+    .reveal:nth-child(2) { animation-delay: 0.08s; }
+    .r1 { animation-delay: 0.05s; }
+    .r2 { animation-delay: 0.14s; }
+    .r3 { animation-delay: 0.23s; }
+    .r4 { animation-delay: 0.32s; }
+    @keyframes rise {
+      to { opacity: 1; translate: 0 0; }
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="doodles" aria-hidden="true">
+    <svg class="doodle-clip" viewBox="0 0 60 100"><path d="M20 78V26a10 10 0 0 1 20 0v46a16 16 0 0 1-32 0V30"/></svg>
+    <svg class="doodle-pin" viewBox="0 0 60 60"><circle cx="30" cy="22" r="12"/><path d="M30 34v20"/></svg>
+    <svg class="doodle-string" viewBox="0 0 200 60"><path d="M4 44c30-32 52 18 84-8s54-26 74-10 34 10 34 10"/></svg>
+  </div>
+
+  <div class="masthead-top reveal r1">
+    <span>miscellaneous.digital</span>
+    <span class="est">a holding company</span>
+  </div>
+
+  <h1 class="reveal r2">Miscellaneous<span class="amp">&amp;</span>Digital</h1>
+
+  <p class="lede reveal r3">A drawer of small, useful apps. Each one does a single thing well, and this page keeps the inventory.</p>
+</header>
+
+<main>
+  <div class="index-heading reveal r3">
+    <h2>The Apps</h2>
+    <span class="count">catalog of 1, so far</span>
+  </div>
+
+  <a class="entry reveal r4" href="#" aria-label="Who Made This">
+    <span class="entry-num">001</span>
+    <span>
+      <span class="entry-name">Who Made This</span>
+      <span class="entry-desc" style="display:block">The first app out of the drawer. It answers a simple question about the things around you.</span>
+    </span>
+    <span class="entry-meta">
+      <span class="stamp">Shipped</span>
+      <span class="entry-go" aria-hidden="true">&rarr;</span>
+    </span>
+  </a>
+
+  <div class="entry pending-entry reveal r4">
+    <span class="entry-num">002</span>
+    <span>
+      <span class="entry-name">Still in the drawer</span>
+      <span class="entry-desc" style="display:block">The next one is being tinkered with. Check back.</span>
+    </span>
+    <span class="entry-meta">
+      <span class="stamp pending">In progress</span>
+    </span>
+  </div>
+</main>
+
+<footer>
+  <span>&copy; 2026 Miscellaneous Digital</span>
+  <span>Say hello: <a href="mailto:hello@miscellaneous.digital">hello@miscellaneous.digital</a></span>
+</footer>
+
+</body>
+</html>
