@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who Made This — Miscellaneous Digital</title>
+<meta name="description" content="Who Made This, catalog no. 001 from Miscellaneous Digital. A small app that answers a simple question about the things around you.">
+<meta property="og:title" content="Who Made This">
+<meta property="og:description" content="Catalog no. 001 from Miscellaneous Digital.">
+<meta property="og:url" content="https://miscellaneous.digital/who-made-this">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232b47d9'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='34' font-weight='800' fill='%23f7f5ee' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: oklch(0.965 0.009 95);
+    --paper-deep: oklch(0.93 0.012 95);
+    --card: oklch(0.985 0.006 95);
+    --ink: oklch(0.24 0.015 265);
+    --ink-soft: oklch(0.45 0.02 265);
+    --cobalt: oklch(0.47 0.19 264);
+    --cobalt-deep: oklch(0.38 0.16 264);
+    --cobalt-ghost: oklch(0.47 0.19 264 / 0.14);
+    --stamp: oklch(0.58 0.19 30);
+    --rule: oklch(0.24 0.015 265 / 0.18);
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Archivo", system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ::selection { background: var(--cobalt); color: var(--paper); }
+
+  a { color: inherit; }
+
+  /* ---------- Top bar ---------- */
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 5vw, 4rem);
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-variation-settings: "wdth" 90;
+    letter-spacing: 0.02em;
+    border-block-end: 2px solid var(--ink);
+  }
+
+  .topbar .back {
+    text-decoration: none;
+    color: var(--cobalt-deep);
+    transition: color 0.25s var(--ease-out);
+  }
+  .topbar .back:hover { color: var(--cobalt); }
+  .topbar .back .arr { display: inline-block; transition: transform 0.25s var(--ease-out); }
+  .topbar .back:hover .arr { transform: translateX(-0.25rem); }
+  .topbar .no { color: var(--ink-soft); }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    padding: clamp(2.5rem, 7vw, 6rem) clamp(1.25rem, 5vw, 4rem) clamp(2rem, 5vw, 4rem);
+    max-width: 74rem;
+    margin-inline: auto;
+    width: 100%;
+    position: relative;
+  }
+
+  .hero .kicker {
+    font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+    font-weight: 300;
+    font-variation-settings: "wdth" 75;
+    color: var(--cobalt);
+    font-feature-settings: "tnum";
+    margin-block-end: 0.75rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 9vw, 7.5rem);
+    line-height: 0.95;
+    font-weight: 800;
+    font-variation-settings: "wdth" 118;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    max-width: 11ch;
+  }
+
+  .hero h1 .q {
+    color: var(--cobalt);
+  }
+
+  .hero .stamp-big {
+    position: absolute;
+    top: clamp(2rem, 6vw, 5rem);
+    right: clamp(1.25rem, 5vw, 4rem);
+    font-size: clamp(0.72rem, 1.2vw, 0.95rem);
+    font-weight: 700;
+    font-variation-settings: "wdth" 95;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--stamp);
+    border: 2.5px solid currentColor;
+    border-radius: 4px;
+    padding: 0.4em 0.9em;
+    transform: rotate(6deg);
+    opacity: 0.9;
+  }
+
+  .hero p.lede {
+    margin-block-start: clamp(1.25rem, 3vw, 2.25rem);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 400;
+    max-width: 40ch;
+    text-wrap: balance;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- The card ---------- */
+
+  .card-section {
+    padding: 0 clamp(1.25rem, 5vw, 4rem) clamp(3rem, 7vw, 5.5rem);
+    max-width: 74rem;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .index-card {
+    background: var(--card);
+    border: 1.5px solid var(--ink);
+    border-radius: 6px;
+    box-shadow: 4px 5px 0 var(--cobalt-ghost), 0 1px 0 var(--rule);
+    max-width: 46rem;
+    transform: rotate(-0.4deg);
+  }
+
+  .index-card .card-rule {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.85rem 1.5rem;
+    border-block-end: 2px solid var(--cobalt);
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-variation-settings: "wdth" 100;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--cobalt-deep);
+  }
+
+  .index-card dl {
+    padding: 1.25rem 1.5rem 1.5rem;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: clamp(1.25rem, 4vw, 2.5rem);
+    row-gap: 0.9rem;
+  }
+
+  .index-card dt {
+    font-size: 0.78rem;
+    font-weight: 500;
+    font-variation-settings: "wdth" 85;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    padding-block-start: 0.2em;
+  }
+
+  .index-card dd {
+    font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+    max-width: 44ch;
+  }
+
+  .index-card dd .num { font-feature-settings: "tnum"; color: var(--cobalt); font-weight: 600; }
+
+  @media (max-width: 560px) {
+    .index-card dl { grid-template-columns: 1fr; row-gap: 0.25rem; }
+    .index-card dt { margin-block-start: 0.9rem; }
+    .index-card dt:first-child { margin-block-start: 0; }
+  }
+
+  /* ---------- CTA ---------- */
+
+  .cta-row {
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .cta {
+    display: inline-block;
+    background: var(--cobalt);
+    color: var(--paper);
+    text-decoration: none;
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    font-weight: 700;
+    font-variation-settings: "wdth" 105;
+    padding: 0.85em 1.6em;
+    border-radius: 4px;
+    box-shadow: 3px 4px 0 var(--cobalt-ghost);
+    transition: background 0.25s var(--ease-out), transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+  }
+  .cta:hover {
+    background: var(--cobalt-deep);
+    transform: translate(-1px, -2px);
+    box-shadow: 5px 7px 0 var(--cobalt-ghost);
+  }
+  .cta:active { transform: translate(1px, 1px); box-shadow: 2px 2px 0 var(--cobalt-ghost); }
+
+  .cta-note {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-variation-settings: "wdth" 90;
+    max-width: 28ch;
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    margin-block-start: auto;
+    padding: clamp(2rem, 5vw, 3rem) clamp(1.25rem, 5vw, 4rem);
+    max-width: 74rem;
+    margin-inline: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-variation-settings: "wdth" 90;
+    border-block-start: 1px solid var(--rule);
+  }
+
+  footer a {
+    color: var(--cobalt-deep);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  footer a:hover { color: var(--cobalt); }
+
+  /* ---------- Entrance motion ---------- */
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      opacity: 0;
+      translate: 0 1.2rem;
+      animation: rise 0.9s var(--ease-out) forwards;
+    }
+    .r1 { animation-delay: 0.05s; }
+    .r2 { animation-delay: 0.14s; }
+    .r3 { animation-delay: 0.23s; }
+    .r4 { animation-delay: 0.32s; }
+    @keyframes rise {
+      to { opacity: 1; translate: 0 0; }
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="back" href="/"><span class="arr">&larr;</span> miscellaneous.digital</a>
+  <span class="no">catalog no. 001</span>
+</nav>
+
+<header class="hero">
+  <span class="stamp-big reveal r1">Shipped</span>
+  <p class="kicker reveal r1">001</p>
+  <h1 class="reveal r2">Who Made This<span class="q">?</span></h1>
+  <p class="lede reveal r3">A small app that answers a simple question about the things around you.</p>
+</header>
+
+<section class="card-section reveal r4">
+  <div class="index-card">
+    <div class="card-rule">
+      <span>Index card</span>
+      <span>Miscellaneous Digital</span>
+    </div>
+    <dl>
+      <dt>Catalog no.</dt>
+      <dd><span class="num">001</span></dd>
+
+      <dt>Name</dt>
+      <dd>Who Made This</dd>
+
+      <dt>What it does</dt>
+      <dd>Point it at something and it tells you who made it. One question, one answer, no clutter.</dd>
+
+      <dt>Status</dt>
+      <dd>Shipped, and quietly improving.</dd>
+
+      <dt>Made by</dt>
+      <dd>Miscellaneous Digital</dd>
+    </dl>
+  </div>
+
+  <div class="cta-row">
+    <a class="cta" href="#">Get the app &rarr;</a>
+    <span class="cta-note">Link coming shortly; the app is on its way to a store near you.</span>
+  </div>
+</section>
+
+<footer>
+  <span>&copy; 2026 Miscellaneous Digital</span>
+  <span><a href="/">Back to the catalog</a></span>
+</footer>
+
+</body>
+</html>
