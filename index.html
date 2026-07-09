@@ -339,8 +339,14 @@
 
 <footer>
   <span>&copy; 2026 Miscellaneous Digital</span>
-  <span>Say hello: <a href="mailto:hello@miscellaneous.digital">hello@miscellaneous.digital</a></span>
+  <span>Say hello: <a href="#contact" data-u="hello" data-d="miscellaneous.digital">hello at miscellaneous.digital</a></span>
 </footer>
+
+<script>
+  document.querySelectorAll('a[data-u]').forEach(function (a) {
+    a.href = 'mailto:' + a.dataset.u + '@' + a.dataset.d;
+  });
+</script>
 
 </body>
 </html>

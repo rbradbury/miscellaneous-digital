@@ -356,7 +356,7 @@
   <p class="kicker reveal r1">001</p>
   <h1 class="reveal r2 logo"><img src="/who-made-this/logo.svg" alt="Who Made This?" width="527" height="487"></h1>
   <p class="lede reveal r3">Point your camera at a brand and see who really owns it.</p>
-  <p class="support reveal r3">For support or any questions, get in touch: <a href="mailto:hello@miscellaneous.digital">hello@miscellaneous.digital</a></p>
+  <p class="support reveal r3">For support or any questions, get in touch: <a href="#contact" data-u="hello" data-d="miscellaneous.digital">hello at miscellaneous.digital</a></p>
 </header>
 
 <section class="shots-section reveal r4" aria-label="Screenshots of the app">
@@ -410,6 +410,12 @@
   <span>&copy; 2026 Miscellaneous Digital</span>
   <span><a href="/who-made-this/privacy/">Privacy</a> &middot; <a href="/">Back to the catalog</a></span>
 </footer>
+
+<script>
+  document.querySelectorAll('a[data-u]').forEach(function (a) {
+    a.href = 'mailto:' + a.dataset.u + '@' + a.dataset.d;
+  });
+</script>
 
 </body>
 </html>
