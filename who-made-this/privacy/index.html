@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — Who Made This</title>
-<meta name="description" content="Privacy policy for Who Made This, an app by Miscellaneous Digital. Everything happens on your device; nothing is collected or transmitted.">
+<meta name="description" content="Privacy policy for Who Made This, an app by Miscellaneous Digital. Everything the camera sees is processed on your device; the only data ever sent is a missing-brand report you choose to send.">
 <meta property="og:title" content="Privacy Policy — Who Made This">
-<meta property="og:description" content="Everything happens on your device. Nothing is collected or transmitted.">
+<meta property="og:description" content="Everything the camera sees stays on your device. The only data ever sent is a missing-brand report you choose to send.">
 <meta property="og:url" content="https://miscellaneous.digital/who-made-this/privacy">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" sizes="64x64" href="/who-made-this/icon-64.png">
@@ -113,7 +113,9 @@
     color: var(--cobalt-deep);
     margin-block-end: 0.55rem;
   }
-  .tldr p { max-width: 60ch; }
+  .tldr p, .tldr li { max-width: 60ch; }
+  .tldr ul { margin-block-start: 0; }
+  .tldr li:last-child { margin-block-end: 0; }
 
   section { margin-block-start: clamp(2rem, 4.5vw, 2.75rem); }
 
@@ -187,66 +189,65 @@
 <main>
   <p class="doc-meta">Who Made This</p>
   <h1>Privacy Policy</h1>
-  <p class="effective">Effective July 9, 2026</p>
+  <p class="effective">Effective July 20, 2026</p>
 
   <div class="tldr">
     <span class="tldr-label">The short version</span>
-    <p>Everything in Who Made This happens on your device. The app has no servers: nothing you do in it is collected, stored, or sent anywhere. There are no accounts and no ads. We can't sell, share, or lose your data, because we never have it.</p>
+    <ul>
+      <li>Everything the camera sees is processed <strong>on your device</strong>. Camera frames and recognized text are not sent anywhere.</li>
+      <li>The app has <strong>no accounts, no ads, no analytics, and no tracking</strong>. We do not collect device identifiers or location.</li>
+      <li>The <strong>only</strong> time anything leaves your phone is when you choose to report a missing brand &mdash; and the app tells you exactly what it will send before you tap Send.</li>
+    </ul>
   </div>
 
-  <p>This policy explains what information Who Made This ("the app") collects and the choices you have. The app is made by Miscellaneous Digital ("we", "us"). It applies to the app and to this website.</p>
+  <p>Who Made This? ("the app") shows you who owns consumer brands by reading brand names on product packaging through your camera. This policy explains what the app does &mdash; and doesn't &mdash; do with your data.</p>
 
   <section>
-    <h2><span class="n">01</span>What we collect</h2>
-    <p><strong>Nothing.</strong> The app works entirely on your device. It has no user accounts and no servers of ours to send anything to. We do not collect your name, email address, contacts, location, photos, browsing history, or advertising identifiers, and we do not track you across other apps or websites.</p>
-    <p><strong>Camera.</strong> With your permission, the app uses the camera so it can look at the thing you're asking about. What the camera sees is processed on your device, in the moment. Images are not saved to your photo library or anywhere else, and they are never transmitted off your device.</p>
-    <p><strong>Diagnostics.</strong> If you have opted in to sharing analytics with app developers in your device settings, Apple may share basic crash reports and anonymized usage statistics with us. These come through Apple's standard frameworks, help us find and fix bugs, and contain no personally identifying information. You can turn this off at any time.</p>
+    <h2><span class="n">01</span>Camera use</h2>
+    <p>The app uses your camera to recognize printed brand names in real time. Recognition runs entirely on your device. Camera frames are analyzed in memory and discarded; they are not stored in your photo library and not uploaded.</p>
   </section>
 
   <section>
-    <h2><span class="n">02</span>How the app works</h2>
-    <p>All processing happens on your device. When the app answers a question, it computes that answer locally; no query, image, or result leaves your phone. This isn't a promise to handle your data carefully. It's an architecture in which there is no data to handle.</p>
-  </section>
-
-  <section>
-    <h2><span class="n">03</span>Third parties</h2>
-    <p>None. The app contains no third-party analytics, no advertising SDKs, no cloud AI services, and no data brokers. Nothing is sold or shared, because nothing is collected.</p>
-  </section>
-
-  <section>
-    <h2><span class="n">04</span>Retention and deletion</h2>
-    <p>We retain nothing, so there is nothing to delete. Anything the app keeps for its own operation (such as settings) lives only on your device and is removed when you delete the app.</p>
-    <p>If you still want to make a data request, email us at the address below and we will respond within 30 days.</p>
-  </section>
-
-  <section>
-    <h2><span class="n">05</span>Your choices and rights</h2>
+    <h2><span class="n">02</span>Reporting a missing brand (optional)</h2>
+    <p>If the app doesn't recognize a brand, you can choose to report it so it can be added to the database. Reporting is always started by you &mdash; nothing is ever sent automatically.</p>
+    <p>When you tap "Send now", the app uploads:</p>
     <ul>
-      <li><strong>Camera.</strong> The app only accesses the camera with your permission, which you can revoke at any time in your device's Settings.</li>
-      <li><strong>Diagnostics.</strong> You can disable analytics sharing in your device's Settings under Privacy &amp; Security, Analytics &amp; Improvements.</li>
-      <li><strong>Everything else.</strong> Deleting the app removes everything it ever stored, because all of it lived on your device.</li>
-      <li><strong>Legal rights.</strong> Depending on where you live (including the EU/EEA, UK, and California), you may have rights to access, correct, or delete personal data we hold. We hold none, but email us and we will confirm that in writing if you need it.</li>
+      <li>the photo shown in the viewfinder at that moment;</li>
+      <li>the text the app detected in that photo, with its position;</li>
+      <li>the app version and platform (iOS or Android);</li>
+      <li>the date and time of the report.</li>
     </ul>
+    <p>That's the complete list. Reports include no name, email, account, device identifier, or location, and we make no attempt to link a report to you.</p>
+    <p>If you're offline, the report is stored on your device and sent the next time you open the app with a connection.</p>
+    <p><strong>Where it goes:</strong> reports are stored in a private database we operate (hosted by Supabase on servers in the United States). They are not public and are not shared with or sold to anyone.</p>
+    <p><strong>What it's used for:</strong> solely to research the brand and add it (or fix its spelling) in the app's ownership database.</p>
+    <p><strong>How long it's kept:</strong> until the report has been reviewed and the database updated, after which reports are periodically deleted.</p>
+    <p><strong>A note on photos:</strong> you control what's in the frame when you report. Photos are best aimed at the product; please avoid including people.</p>
   </section>
 
   <section>
-    <h2><span class="n">06</span>Children</h2>
-    <p>The app is not directed at children under 13 (or the equivalent minimum age in your jurisdiction), and we do not knowingly collect personal information from anyone, children included.</p>
+    <h2><span class="n">03</span>Data we collect &mdash; App Store summary</h2>
+    <p>In App Store terms, the only data "collected" by the app is the content of missing-brand reports you choose to send (a photo and the detected text). It is used only for app functionality, is not linked to your identity, and is not used for tracking.</p>
   </section>
 
   <section>
-    <h2><span class="n">07</span>Security</h2>
-    <p>The strongest security measure available is not holding data in the first place. Because nothing leaves your device, your use of the app is protected by your device's own security: its passcode, encryption, and app sandboxing.</p>
+    <h2><span class="n">04</span>Children</h2>
+    <p>The app is not directed at children and collects no personal information from anyone.</p>
   </section>
 
   <section>
-    <h2><span class="n">08</span>Changes to this policy</h2>
-    <p>If a future version of the app changes how data is handled, we will update this page, change the effective date above, and call out the change in the app's release notes before it applies to you.</p>
+    <h2><span class="n">05</span>Deletion requests</h2>
+    <p>If you'd like a report you sent to be deleted, email us with the approximate date and the brand name you reported, and we'll remove it: <strong>rurik.bradbury at gmail.com</strong></p>
+  </section>
+
+  <section>
+    <h2><span class="n">06</span>Changes</h2>
+    <p>If the app's data practices ever change, this policy will be updated and the effective date above revised before the change ships.</p>
   </section>
 
   <div class="contact-card">
     <span class="who">Miscellaneous Digital</span>
-    <span>Questions or requests: <strong>hello at miscellaneous.digital</strong></span>
+    <span>Questions about this policy: <strong>rurik.bradbury at gmail.com</strong></span>
   </div>
 </main>
 
